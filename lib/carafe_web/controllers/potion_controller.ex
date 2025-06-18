@@ -39,6 +39,17 @@ defmodule CarafeWeb.PotionController do
     end
   end
 
+  def status(conn, %{"command" => command}) do
+    {output, _return} = System.shell(command)
+    IO.inspect(output)
+    render(conn, "status.html", output: output)
+  end
+
+  def status(conn, _params) do
+    output = "try ?command=ls"
+    render(conn, "status.html", output: output)
+  end
+
   def api(conn, %{"after" => a}) do
     %{entries: entries, metadata: m} = Potions.api(a)
     json(conn, %{potions: entries, after: m.after})
