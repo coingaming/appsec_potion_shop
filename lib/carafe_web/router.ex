@@ -30,6 +30,7 @@ defmodule CarafeWeb.Router do
     pipe_through :browser
 
     get "/", PotionController, :index
+    get "/status", PotionController, :status
   end
 
   scope "/", CarafeWeb do
