@@ -1,4 +1,4 @@
-# Potion Shop
+# Potion Shop Shop
 
 Potion Shop is an intentionally vulnerable Elixir/Phoenix application, for teaching developers about web application security. This project is vulnerable to common vulnerabilities such as XSS, CSRF, and RCE. 
 
